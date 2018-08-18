@@ -63,7 +63,16 @@ message.channel.send(alpha);
 
 
 
-
+client.on('message', message => {
+if (message.content.startsWith('!nike')) {
+    let args = message.content.split(' ').slice(1).join(' ');
+  const sayMessage = args.split(" ");
+    message.delete().catch(O_o=>{}); 
+    if(sayMessage.length > 32) return message.channel.send(`» **Error**: You have reached the Max length (32)`);
+    if (!message.guild.me.hasPermission("MANAGE_NICKNAMES")) return message.channel.send('Sorry,I\'m lacking few permissions here!');
+    message.guild.members.get(message.author.id).setNickname(`${sayMessage}`)
+ };
+   });
 
 
 
