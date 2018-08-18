@@ -108,7 +108,7 @@ client.on('message', message => {
   
   client.on('message',async message => {
     if(message.content.startsWith(prefix + "restart")) {
-        if(message.author.id !== "323885452207587329") return message.reply('You aren\'t the bot owner.');
+        if(message.author.id !== "430038396585377793") return message.reply('You aren\'t the bot owner.');
         message.channel.send('**Restarting.**').then(msg => {
             setTimeout(() => {
                msg.edit('**Restarting..**');
