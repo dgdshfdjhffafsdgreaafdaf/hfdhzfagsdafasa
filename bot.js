@@ -194,6 +194,54 @@ client.on('message', message => {
   }
   });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+client.on('message', message => {
+  if (true) {
+if (message.content === '!invite') {
+      message.author.send('  https://discordapp.com/oauth2/authorize?client_id=457187112564031510&permissions=522304&scope=bot  |  تفضل ربط البوت     ').catch(e => console.log(e.stack));
+ 
+    }
+   }
+  });
+ 
+ 
+client.on('message', message => {
+     if (message.content === "-invite") {
+     let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#9B59B6")
+  .addField(" Done | تــــم" , " |  تــــم ارســالك في الخــاص")
+     
+     
+     
+  message.channel.sendEmbed(embed);
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
  const cuttweet = [
      'كت تويت ‏| تخيّل لو أنك سترسم شيء وحيد فيصبح حقيقة، ماذا سترسم؟',
      'كت تويت | أكثر شيء يُسكِت الطفل برأيك؟',
