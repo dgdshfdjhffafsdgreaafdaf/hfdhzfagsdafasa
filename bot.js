@@ -171,21 +171,25 @@ const zead = [
 
 
 
-const child_process = require("child_process");
-const adminprefix = "!";
-const devs = ['430038396585377793'];
-
-client.on('message', message => {
-if(message.content === adminprefix + "restart") {
-      if (!devs.includes(message.author.id)) return;
-          message.channel.send( **الشخص الذي اعاد تشغيل البوت ${message.author.username}**);
-        console.log(⚠️ جاري اعادة تشغيل البوت... ⚠️);
-        client.destroy();
-        child_process.fork(__dirname + "bot.js");
-        console.log(تم اعادة تشغيل البوت);
+  client.on('message',async message => {
+    if(message.content.startsWith(prefix + "restart")) {
+        if(message.author.id !== "430038396585377793") return message.reply('You aren\'t the bot owner.');
+        message.channel.send('**Restarting.**').then(msg => {
+            setTimeout(() => {
+               msg.edit('**Restarting..**');
+            },1000);
+            setTimeout(() => {
+               msg.edit('**Restarting...**');
+            },2000);
+        });
+        console.log(`${message.author.tag} [ ${message.author.id} ] has restarted the bot.`);
+        console.log(`Restarting..`);
+        setTimeout(() => {
+            client.destroy();
+            client.login('توكن البوت');
+        },3000);
     }
-  
-  });
+});
 
 
 
