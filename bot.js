@@ -61,6 +61,25 @@ message.channel.send(alpha);
 };
   });
 
+
+client.on('message', async message =>{
+
+  let messageArray = message.content.split(" ");
+  let cmd = messageArray[0];
+  let args = messageArray.slice(1);
+  let sicon = message.author.displayAvatarURL;
+  if(cmd === `myid`) {
+      var bots = new Discord.RichEmbed()
+
+      .setDescription(`** Your id: ${message.author.id}  **`)
+      .setColor('RANDOM')
+      message.channel.send(bots);
+  }
+});
+
+
+
+
 client.on('message', message => {
     var args = message.content.split(' ').slice(1).join(' ');
     if(message.content.startsWith(prefix + 'say')) {
