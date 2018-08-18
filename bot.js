@@ -61,7 +61,17 @@ message.channel.send(alpha);
 };
   });
 
-
+client.on('message', message => {
+    var args = message.content.split(' ').slice(1).join(' ');
+    if(message.content.startsWith(prefix + 'say')) {
+        if(!args) return;
+    var say = new Discord.RichEmbed()
+    .setDescription(`**${args}**`)
+    .setColor('GRAY')
+    message.channel.sendEmbed(say)
+    message.delete();
+    }
+});
 
 client.on('message', message => {
 if (message.content.startsWith('!nike')) {
