@@ -66,12 +66,52 @@ message.channel.send(alpha);
 
 
 
+client.on('message', message => {
+   if (message.content === "myid2") {
+   let embed = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setThumbnail(message.author.avatarURL)
+  .addField("Name:",`${message.author.username}`, true)
+  .addField('Discrim:',"#" +  message.author.discriminator, true)
+  .addField("ID:", message.author.id, true)
+  .addField("Create At:", message.author.createdAt, true)
+     
+     
+  message.channel.sendEmbed(embed);
+    }
+});
 
 
 
+const d = require("discord.js");
+const client = new d.Client();
+var prefix ="!"//:3 غيره بكيفك
+var colors = new Array(100);
 
-
-
+client.on("message", (message) => {
+    var command = message.content.split(" ")[0].slice(prefix.length);
+    switch(command) {
+        case "create-colors" :
+        if (!message.channel.type == "text") return;
+        if (!message.member.hasPermission("MANAGE_ROLES")) return
+        for(var x = 0;x<colors.length;x++){
+            message.guild.createRole({name : x, color : colors[x]});
+        };
+    };
+}).login("توكن الوت.");
+function sin_to_hex(i, phase) {
+    var sin = Math.sin(Math.PI / size * 2 * i + phase);
+    var int = Math.floor(sin * 127) + 128;
+    var hex = int.toString(16);
+  
+    return hex.length === 1 ? '0'+hex : hex;
+};
+for(var x=0;x<colors.length;x++) {
+    let r   = sin_to_hex(i, 0 * Math.PI * 2/3);
+    let b  = sin_to_hex(i, 1 * Math.PI * 2/3);
+    let g = sin_to_hex(i, 2 * Math.PI * 2/3);
+    colors[x] = '#'+ r + g + b;
+};
   
   
   
@@ -79,7 +119,37 @@ message.channel.send(alpha);
   
 
   
-  
+  client.on('message', message => {
+    if (message.content.startsWith("!تهكير")) {
+      if (message.author.bot) return
+           message.delete();
+             let args = message.content.split(' ').slice(1);
+                   let virusname = args.join(' ');
+                 if (virusname < 1) {
+                     return message.channel.send("``اكتب اسم الشخص الي تبي يتهكر``");
+                                     }
+                 message.channel.send({embed: new Discord.RichEmbed().setTitle('Loading ' + virusname + "...").setColor(0xFF0000)}).then(function(m) {
+             setTimeout(function() {
+               m.edit({embed: new Discord.RichEmbed().setTitle('[' + virusname + ']: Loading Discord Virus [▓ ] 1%').setColor(0xFF0000)})
+             }, 1000)
+            setTimeout(function() {
+               m.edit({embed: new Discord.RichEmbed().setTitle('[' + virusname + ']: Loading Discord Virus [▓▓▓▓] 25%').setColor(0xFF0000)})
+             }, 2000)
+           setTimeout(function() {     
+               m.edit({embed: new Discord.RichEmbed().setTitle('[' + virusname + ']: Loading Discord Virus [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ] 100%').setColor(0xFF0000)})
+             }, 3000)
+                setTimeout(function() {
+               m.edit({embed: new Discord.RichEmbed().setTitle('[' + virusname + ']: Uploaded! Initiating explosion in 1...').setColor(0xFF0000)})
+             }, 4000)
+              setTimeout(function() {
+               m.delete()
+           }, 5000)
+             setTimeout(function() {
+               message.channel.send('تم تهكيرك')
+           }, 6000)
+           });
+         }
+ });
   
   
  
