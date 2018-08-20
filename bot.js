@@ -148,7 +148,7 @@ client.on('message', msg => {
 
 client.on("message", message => {
 	var prefix = "!";
- if (message.content === "-help") {
+ if (message.content === "!help") {
   const embed = new Discord.RichEmbed()  
       .setColor("#000000") 
       .setDescription(`
@@ -173,7 +173,7 @@ ${prefix}help-music ⇏ اوامر الموسيقى
 
 client.on("message", message => {
 	var prefix = "-";
- if (message.content === "-help-public") {
+ if (message.content === "!help-public") {
 	 message.channel.send('**تم ارسالك في الخاص** :mailbox_with_mail: ');
   const embed = new Discord.RichEmbed() 
       .setColor("#000000")
@@ -214,8 +214,8 @@ client.on("message", message => {
    }); 
    
    client.on("message", message => {
-	var prefix = "-";
- if (message.content === "-help-admin") {
+	var prefix = "!";
+ if (message.content === "!help-admin") {
 	  message.channel.send('**تم ارسالك في الخاص** :mailbox_with_mail: ');
   const embed = new Discord.RichEmbed() 
       .setColor("#000000")
@@ -251,8 +251,8 @@ client.on("message", message => {
    }); 
 
    client.on("message", message => {
-	var prefix = "-";
- if (message.content === "-help-games") {
+	var prefix = "!";
+ if (message.content === "!help-games") {
 	  message.channel.send('**تم ارسالك في الخاص** :mailbox_with_mail: ');
   const embed = new Discord.RichEmbed() 
       .setColor("#000000")
@@ -276,8 +276,8 @@ client.on("message", message => {
    }); 
 			  
 client.on("message", message => {
-	var prefix = "-";
- if (message.content === "-help-music") {
+	var prefix = "!";
+ if (message.content === "!help-music") {
 	  message.channel.send('**تم ارسالك في الخاص** :mailbox_with_mail: ');
   const embed = new Discord.RichEmbed() 
       .setColor("#000000")
