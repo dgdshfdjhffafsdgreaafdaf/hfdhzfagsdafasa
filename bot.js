@@ -205,7 +205,6 @@ client.on("message", message => {
 ❖!embed ~ يكرر الي تقولو بشكل حلو
 ❖!emoji <any things> ~ لتحويل اي كلمه تقولها الي ايموجي
 ❖!inv ~ لدعوة البوت الى سيرفرك
-❖!support ~ سيرفر الدعم
 ❖!contact ~ ارسال اقتراح او لمراسلة صاحب البوت
 `)
    message.author.sendEmbed(embed)
